@@ -5,6 +5,6 @@ also I felt comfortable when working on the structure.  I know there has to be w
 but I am not sure how to make that happen.
 
 Day 2 - I had a few more issues today.  The first issue was figuring out how to get the data from the txt file I created
-I spend some time on google getting that question answered.  After that I had to brush up on how to use split, because
+I spent some time on google getting that question answered.  After that I had to brush up on how to use split, because
 I had run into a few issues with getting the strings split where I wanted.  Once I got split under control everything
 else went rather smooth.
