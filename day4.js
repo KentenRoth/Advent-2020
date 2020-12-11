@@ -1,11 +1,23 @@
 const fs = require('fs');
-const util = require('util');
 
-const read = util.promisify(fs.readFile);
+const getData = fs.readFileSync('./data/day4Data.txt', 'utf-8');
 
-getPassportData = async () => {
-	const passportData = await read(
-		'./data/day4Data.txt',
-		'utf8'
-	).then((data) => data.split('\n'));
+const passports = getData.split('\n\n').map((x) => x.split('\n'));
+
+getPassportData = (eachPassport) => {
+	var neededKeys = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
+	let valid = 0;
+	eachPassport.forEach((passports) => {
+		let passport = passports
+			.join(' ')
+			.split(' ')
+			.map((key) => key.split(':'))
+			.filter((x) => x[0] !== 'cid');
+		if (passport.length >= 7) {
+			valid++;
+		}
+	});
+	console.log(valid);
 };
+
+getPassportData(passports);
